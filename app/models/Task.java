@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
 
+import com.avaje.ebean.Ebean;
 import play.db.ebean.*;
 import play.data.validation.Constraints.*;
 
@@ -42,6 +43,10 @@ public class Task extends Model{
     public static void delete(Long id) {
         find.ref(id).delete();
 
+    }
+
+    public static Task getById(Long id){
+        return find.ref(id);
     }
 
 
