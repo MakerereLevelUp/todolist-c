@@ -14,7 +14,7 @@ import static play.mvc.Results.ok;
  */
 public class TasksApiController {
 
-    public static Result allTasks(x){
+    public static Result allTasks(){
         List<Task> tasks = Task.all();
         JsonNode jsonNode = Json.toJson(tasks);
         return ok(jsonNode);
