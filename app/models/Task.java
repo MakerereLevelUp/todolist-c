@@ -24,6 +24,9 @@ public class Task extends Model{
     public String label;
 
 
+    public String description;
+
+
     public Task(String label){
         this.label = label;
     }
