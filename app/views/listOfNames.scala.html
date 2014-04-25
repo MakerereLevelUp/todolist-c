@@ -27,6 +27,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Tasks<span class="badge">@tasks.size()</span></a></li>
                 <li><a href="#">About</a></li>
+                <li>New tab</li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -43,8 +44,7 @@
                     <ul class="list-group">
                         @for(task <- tasks) {
                         <li class="list-group-item">
-                            <span>@task.label</span>
-                            <p>@task.description</p>
+                            @task.label
                             @form(routes.Application.deleteTask(task.id)) {
                             <input type="submit" value="Delete" class="btn btn-xs btn-danger">
                             }
@@ -68,8 +68,6 @@
 
                     @inputText(taskForm("label"), 'class -> "form-control")
 
-                    @textarea(taskForm("description"), 'class -> "form-control")
-
 
                     <input type="submit" value="Create" class="btn btn-primary">
                     }
@@ -83,6 +81,3 @@
 </div>
 </body>
 </html>
-        <script>
-
-        </script>
